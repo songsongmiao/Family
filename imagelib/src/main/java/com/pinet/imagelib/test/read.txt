@@ -1,0 +1,161 @@
+在使用该图片加载库加载图片时我们需要初始化图片的配置参数：
+ public static void initImageLoader(Context context) {
+        // This configuration tuning is custom. You can tune every option, you may tune some of them,
+        // or you can create default configuration by
+        //  ImageLoaderConfiguration.createDefault(this);
+        // method.
+        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
+        config.threadPriority(Thread.NORM_PRIORITY - 2);
+        config.denyCacheImageMultipleSizesInMemory();
+        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
+        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.tasksProcessingOrder(QueueProcessingType.LIFO);
+        config.writeDebugLogs(); // Remove for release app
+
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config.build());
+    }
+
+该方法最好在Application 中实现或者在activity 加载数据前实现：
+
+
+
+加载图片的实例：
+
+1、初始化参数：
+DisplayImageOptions mOption = new DisplayImageOptions.Builder()
+        .showImageOnLoading(R.mipmap.ic_launcher)
+        .showImageForEmptyUri(R.mipmap.ic_empty)
+        .showImageOnFail(R.mipmap.ic_error)
+        .cacheInMemory(true)
+        .cacheOnDisk(true)
+        .considerExifParams(true)
+
+        .displayer(new SimpleBitmapDisplayer())
+        .build();
+ImageLoadingListener mLoadListener = new LoadAnimationListener();
+
+
+2、加载的图片：
+ImageLoader.getInstance().displayImage(Context context,ImageView imageView,DisplayImageOptions mOption,ImageLoadingListener mLoadListener);
+
+
+
+如下：
+ private class ImageAdapter extends BaseAdapter{
+
+        private Context mContext;
+        private List<String> mList = new ArrayList<>();
+        private DisplayImageOptions mOption;
+        private ImageLoadingListener mLoadListener;
+        public ImageAdapter(Context context,List<String> mList)
+        {
+            this.mContext = context;
+            if(mList != null)
+            {
+                this.mList = mList;
+            }
+            init();
+        }
+
+
+        private void init()
+        {
+           // CircleBitmapDisplayer  mCircleDisplay = new CircleBitmapDisplayer(Color.WHITE,5);//圆角图片
+            mOption = new DisplayImageOptions.Builder()
+                    .showImageOnLoading(R.mipmap.ic_launcher)
+                    .showImageForEmptyUri(R.mipmap.ic_empty)
+                    .showImageOnFail(R.mipmap.ic_error)
+                    .cacheInMemory(true)
+                    .cacheOnDisk(true)
+                    .considerExifParams(true)
+
+                    .displayer(new SimpleBitmapDisplayer())   //普通的图片填充
+                    .build();
+            mLoadListener = new LoadAnimationListener();
+        }
+
+        public void setData(List<String> mList)
+        {
+            if(mList == null || mList.isEmpty())
+            {
+                //如果有刷新操作，请结束该刷新的内容
+                return ;
+            }
+            this.mList = mList;
+            this.notifyDataSetChanged();
+        }
+
+        @Override
+        public int getCount() {
+            return this.mList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return this.mList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder holder = null;
+
+            if(convertView == null)
+            {
+                holder = new ViewHolder();
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.item_image_layout,null);
+                holder.ivImage = (ImageView) convertView.findViewById(R.id.iv_image_icon);
+                holder.tvTitle = (TextView) convertView.findViewById(R.id.tv_image_title);
+                convertView.setTag(holder);
+            }
+            else
+            {
+                holder = (ViewHolder) convertView.getTag();
+            }
+            //加载数据
+            String content = mList.get(position);
+            if(content == null )
+            {
+                content = "http://wx.pinet.cc:8081/plife2/Upload/Img/201706/5948d86f779bd.png";
+            }
+            //ImageLoaderConfiguration
+            ImageLoader.getInstance().displayImage(content,holder.ivImage,mOption,mLoadListener);
+
+            return convertView;
+        }
+
+
+        class ViewHolder{
+
+            ImageView ivImage;
+            TextView tvTitle;
+
+
+        }
+
+        class LoadAnimationListener extends SimpleImageLoadingListener {
+
+            private List<String> mImageURL = Collections.synchronizedList(new LinkedList<String>());
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+//                super.onLoadingComplete(imageUri, view, loadedImage);
+                if(loadedImage != null)
+                {
+                    ImageView mImageView = (ImageView) view;
+                    boolean isDisplay = !mImageURL.contains(imageUri);
+                    if(isDisplay)
+                    {
+                        FadeInBitmapDisplayer.animate(mImageView,500);//时间
+                        mImageURL.add(imageUri);
+                    }
+                }
+            }
+        }
+
+    }

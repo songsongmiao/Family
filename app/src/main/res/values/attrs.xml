@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Custom">
+        <attr name="slide_image" format="reference"/>
+        <attr name="background_image" format="reference"/>
+        <attr name="masker_image" format="reference"/>
+        <attr name="black_image" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitchButton">
+        <attr name="frameDrawable" format="reference|color"/>
+        <attr name="stateDrawable" format="reference|color"/>
+        <attr name="stateMaskDrawable" format="reference|color"/>
+        <attr name="sliderDrawable" format="reference|color"/>
+        <attr name="withTextInterval" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaskImage">
+        <attr name="image" format="reference"/>
+        <attr name="mask" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SlideAnimator"
+        >
+        <attr name="enter" format="reference"/>
+        <attr name="exit" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomObjectAnimator">
+        <attr name="anim_image" format="reference"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pinet.cdemounlink.scroller.TestScroller
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.pinet.cdemounlink.CustomCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:slide_image="@mipmap/awitch_slide"
+            app:background_image="@mipmap/switch_backgroud"
+            app:masker_image="@mipmap/switch_masker"
+            app:black_image="@mipmap/switch_state_mask"
+            />
+
+        <com.pinet.cdemounlink.CircleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            />
+
+        <com.pinet.cdemounlink.flow.PieChart01View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+
+
+
+
+        <com.pinet.cdemounlink.SlideText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+
+                >
+                <ImageView
+                    android:id="@+id/test_custom_slide_pic1"
+                    android:layout_width="68dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="11dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/test_meizu"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/test_custom_slide_llcontainer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toLeftOf="@+id/test_custom_slide_pic1"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="围观"
+                        android:textColor="@color/material_red"
+                        android:background="@drawable/shape_circle_rectangle_red"
+                        android:gravity="center"
+                        android:textSize="12sp"
+
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="魅族悄悄上新品：6888元，比手机更便宜"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="4dp"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/test_custom_slide_llcontainer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toLeftOf="@+id/test_custom_slide_pic1"
+                    android:layout_below="@+id/test_custom_slide_llcontainer1"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="热文"
+                        android:textColor="@color/material_red"
+                        android:background="@drawable/shape_circle_rectangle_red"
+                        android:gravity="center"
+                        android:textSize="12sp"
+
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="iPhone XC 曝光：售价或是惊喜！"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="4dp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/test_custom_slide_pic2"
+                    android:layout_width="68dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="11dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/test_bentian"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/test_custom_slide_llcontainer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toLeftOf="@+id/test_custom_slide_pic2"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="围观"
+                        android:textColor="@color/material_red"
+                        android:background="@drawable/shape_circle_rectangle_red"
+                        android:gravity="center"
+                        android:textSize="12sp"
+
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="不到八万的本田SVN来了，油耗不足"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="4dp"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/test_custom_slide_llcontainer4"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toLeftOf="@+id/test_custom_slide_pic2"
+                    android:layout_below="@+id/test_custom_slide_llcontainer3"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="围观"
+                        android:textColor="@color/material_red"
+                        android:background="@drawable/shape_circle_rectangle_red"
+                        android:gravity="center"
+                        android:textSize="12sp"
+
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="华为P曝光：刘海全面屏+14万"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="4dp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+        </com.pinet.cdemounlink.SlideText>
+
+
+        <!--  定制动画 -->
+
+        <com.pinet.cdemounlink.test.CustomAnimation
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/material_yellow"
+            >
+
+        </com.pinet.cdemounlink.test.CustomAnimation>
+
+        <com.pinet.cdemounlink.test.CustomObjectAnimation
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            app:anim_image="@mipmap/ic_launcher"
+            android:background="@android:color/darker_gray"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</com.pinet.cdemounlink.scroller.TestScroller>

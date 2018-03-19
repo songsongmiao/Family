@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pinet.cdemounlink.MainActivity">
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 打印日志"
+        android:visibility="visible"
+        android:onClick="OnPrintLog"
+
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/struct_relese"
+        android:layout_below="@+id/sample_text"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 调用析构函数"
+        android:visibility="visible"
+        android:onClick="OnRelease"
+
+
+        />
+
+
+    <TextView
+        android:id="@+id/struct_copy"
+        android:layout_below="@+id/struct_relese"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 拷贝函数和赋值运算"
+        android:visibility="visible"
+        android:onClick="OnCopy"
+
+
+        />
+
+
+    <TextView
+        android:id="@+id/struct_scences"
+        android:layout_below="@+id/struct_copy"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 拷贝函数调用场景"
+        android:visibility="visible"
+        android:onClick="OnScenes"
+        />
+
+    <TextView
+        android:id="@+id/struct_deepcopy"
+        android:layout_below="@+id/struct_scences"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 浅拷贝和深拷贝"
+        android:visibility="visible"
+        android:onClick="OnDeepScenes"
+        />
+
+    <TextView
+        android:id="@+id/struct_const"
+        android:layout_below="@+id/struct_deepcopy"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C++ 常量"
+        android:visibility="visible"
+        android:onClick="OnConst"
+        />
+
+    <TextView
+        android:id="@+id/struct_cconst"
+        android:layout_below="@+id/struct_const"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 常量"
+        android:visibility="visible"
+        android:onClick="OnCConst"
+        />
+
+
+    <TextView
+        android:id="@+id/struct_Pointer"
+        android:layout_below="@+id/struct_cconst"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 指针"
+        android:visibility="visible"
+        android:onClick="OnPointer"
+        />
+
+
+    <TextView
+        android:id="@+id/struct_ConstReference"
+        android:layout_below="@+id/struct_Pointer"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 常引用"
+        android:visibility="visible"
+        android:onClick="OnReference"
+        />
+
+
+    <TextView
+        android:id="@+id/struct_inLine"
+        android:layout_below="@+id/struct_ConstReference"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 内联函数"
+        android:visibility="visible"
+        android:onClick="OnInLine"
+        />
+
+
+    <TextView
+        android:id="@+id/struct_params"
+        android:layout_below="@+id/struct_inLine"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 可变参数"
+        android:visibility="visible"
+        android:onClick="OnParams"
+        />
+
+
+
+    <TextView
+        android:id="@+id/struct_class"
+        android:layout_below="@+id/struct_inLine"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C 定义类"
+        android:visibility="visible"
+        android:onClick="OnClass"
+        />
+
+
+
+
+</RelativeLayout>
